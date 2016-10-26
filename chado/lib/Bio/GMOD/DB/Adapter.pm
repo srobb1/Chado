@@ -495,7 +495,7 @@ new value of next table id (to set)
 sub nextoid {  
   my $self = shift;
   my $table= shift;
-  my $arg  = shift if defined(@_);
+  my $arg  = shift;
   if (defined($arg) && $arg eq '++') {
       return $self->{'nextoid'}{$table}++;
   }
@@ -564,7 +564,7 @@ sub nextfeature {
     }
 
     return $fid;
-#     my $arg = shift if defined(@_);
+#     my $arg = shift;
 #     if (defined($arg) && $arg eq '++') {
 #         return $self->{'nextfeature'}++;
 #     }
@@ -602,7 +602,7 @@ sub nextfeatureloc {
     my $self = shift;
     return $self->nextoid('featureloc',@_);
 # 
-#     my $arg = shift if defined(@_);
+#     my $arg = shift;
 #     if (defined($arg) && $arg eq '++') {
 #         return $self->{nextfeatureloc}++;
 #     }
@@ -638,7 +638,7 @@ sub nextfeatureloc {
 # sub nextfeaturerel {
 #     my $self = shift;
 #     return $self->nextoid('feature_relationship',@_);
-# #     return $nextfeaturerel = shift if defined(@_);
+# #     return $nextfeaturerel = shift;
 # #     return $nextfeaturerel;
 # }
 
@@ -668,7 +668,7 @@ sub nextfeatureloc {
 # sub nextfeatureprop {
 #     my $self = shift;
 #     return $self->nextoid('featureprop',@_);
-# #     return $nextfeatureprop = shift if defined(@_);
+# #     return $nextfeatureprop = shift;
 # #     return $nextfeatureprop;
 # }
 
@@ -698,7 +698,7 @@ sub nextfeatureloc {
 # sub nextfeaturecvterm {
 #     my $self = shift;
 #     return $self->nextoid('feature_cvterm',@_);
-# #     return $nextfeaturecvterm = shift if defined(@_);
+# #     return $nextfeaturecvterm = shift;
 # #     return $nextfeaturecvterm;
 # }
 
@@ -728,7 +728,7 @@ sub nextfeatureloc {
 # sub nextsynonym {
 #     my $self = shift;
 #     return $self->nextoid('synonym',@_);
-# #     return $nextsynonym = shift if defined(@_);
+# #     return $nextsynonym = shift;
 # #     return $nextsynonym;
 # }
 
@@ -758,7 +758,7 @@ sub nextfeatureloc {
 # sub nextfeaturesynonym {
 #     my $self = shift;
 #     return $self->nextoid('feature_synonym',@_);
-# #     return $nextfeaturesynonym = shift if defined(@_);
+# #     return $nextfeaturesynonym = shift;
 # #     return $nextfeaturesynonym;
 # }
 
@@ -788,7 +788,7 @@ sub nextfeatureloc {
 # sub nextfeaturedbxref {
 #     my $self = shift;
 #     return $self->nextoid('feature_dbxref',@_);
-# #     return $nextfeaturedbxref = shift if defined(@_);
+# #     return $nextfeaturedbxref = shift;
 # #     return $nextfeaturedbxref;
 # }
 
@@ -818,7 +818,7 @@ sub nextfeatureloc {
 # sub nextdbxref {
 #     my $self = shift;
 #     return $self->nextoid('dbxref',@_);
-# #     return $nextdbxref = shift if defined(@_);
+# #     return $nextdbxref = shift;
 # #     return $nextdbxref;
 # }
 
@@ -848,7 +848,7 @@ sub nextfeatureloc {
 # sub nextanalysisfeature {
 #     my $self = shift;
 #     return $self->nextoid('analysisfeature',@_);
-# #     return $nextanalysisfeature = shift if defined(@_);
+# #     return $nextanalysisfeature = shift;
 # #     return $nextanalysisfeature;
 # }
 
@@ -1075,7 +1075,7 @@ new value of fp_cv (to set)
 
 sub fp_cv {
     my $self = shift;
-    my $fp_cv = shift if defined(@_);
+    my $fp_cv = shift;
     return $self->{'fp_cv'} = $fp_cv if defined($fp_cv);
     return $self->{'fp_cv'};
 }
@@ -1108,7 +1108,7 @@ new value of allow_external_parent (to set)
 
 sub allow_external_parent {
     my $self = shift;
-    my $allow_external_parent = shift if defined(@_);
+    my $allow_external_parent = shift;
 
     return $self->{'allow_external_parent'} = $allow_external_parent if defined($allow_external_parent);
     return $self->{'allow_external_parent'};
@@ -1141,7 +1141,7 @@ new value of recreate_cache (to set)
 
 sub recreate_cache {
     my $self = shift;
-    my $recreate_cache = shift if defined(@_);
+    my $recreate_cache = shift;
 
     return $self->{'recreate_cache'} = $recreate_cache if defined($recreate_cache);
     return $self->{'recreate_cache'};
@@ -1466,7 +1466,7 @@ new value of first_feature_id (to set)
 
 sub first_feature_id {
     my $self = shift;
-    my $first_feature_id = shift if defined(@_);
+    my $first_feature_id = shift;
     return $self->{'first_feature_id'} = $first_feature_id if defined($first_feature_id);
     return $self->{'first_feature_id'};
 }
@@ -1663,7 +1663,7 @@ new value of dbh (to set)
 sub dbh {
     my $self = shift;
 
-    my $dbh = shift if defined(@_);
+    my $dbh = shift;
     return $self->{'dbh'} = $dbh if defined($dbh);
     return $self->{'dbh'};
 }
@@ -1695,7 +1695,7 @@ new value of nouniquecache (to set)
 sub nouniquecache {
     my $self = shift;
 
-    my $nouniquecache = shift if defined(@_);
+    my $nouniquecache = shift;
     return $self->{'nouniquecache'} = $nouniquecache if defined($nouniquecache);
     return $self->{'nouniquecache'};
 }
@@ -1727,7 +1727,7 @@ new value of noexon (to set)
 sub noexon {
     my $self = shift;
 
-    my $noexon = shift if defined(@_);
+    my $noexon = shift;
     return $self->{'noexon'} = $noexon if defined($noexon);
     return $self->{'noexon'};
 }
@@ -1759,7 +1759,7 @@ new value of dbname (to set)
 sub dbname {
     my $self = shift;
 
-    my $dbname = shift if defined(@_);
+    my $dbname = shift;
     return $self->{'dbname'} = $dbname if defined($dbname);
     return $self->{'dbname'};
 }
@@ -1976,7 +1976,7 @@ new value of inserts (to set)
 sub inserts {
     my $self = shift;
 
-    my $inserts = shift if defined(@_);
+    my $inserts = shift;
     return $self->{'inserts'} = $inserts if defined($inserts);
     return $self->{'inserts'};
 }
@@ -2006,7 +2006,7 @@ new value of score_col (to set)
 
 sub score_col {
     my $self = shift;
-    my $col  = shift if defined(@_);
+    my $col  = shift;
     return $self->{'score_col'} = $col if defined($col);
     return $self->{'score_col'};
 }
@@ -2036,7 +2036,7 @@ new value of analysis_group (to set)
 
 sub analysis_group {
     my $self = shift;
-    my $anal = shift if defined(@_);
+    my $anal = shift;
     return $self->{'analysis_group'} = $anal if defined($anal);
     return $self->{'analysis_group'};
 }
@@ -2066,7 +2066,7 @@ new value of global_analysis (to set)
 
 sub global_analysis {
     my $self = shift;
-    my $anal = shift if defined(@_);
+    my $anal = shift;
     return $self->{'global_analysis'} = $anal if defined($anal);
     return $self->{'global_analysis'};
 }
@@ -2098,7 +2098,7 @@ new value of is_analysis (to set)
 
 sub is_analysis {
     my $self = shift;
-    my $is_analysis = shift if defined(@_);
+    my $is_analysis = shift;
     return $self->{'is_analysis'} = $is_analysis if defined($is_analysis);
     return $self->{'is_analysis'};
 }
@@ -2283,7 +2283,7 @@ new value of save_tmpfiles (to set)
 
 sub save_tmpfiles {
     my $self = shift;
-    my $save_tmpfiles = shift if defined(@_);
+    my $save_tmpfiles = shift;
     return $self->{'save_tmpfiles'} = $save_tmpfiles if defined($save_tmpfiles);    return $self->{'save_tmpfiles'};
 }
 
@@ -2312,7 +2312,7 @@ new value of random_tmp_dir (to set)
 
 sub random_tmp_dir {
     my $self = shift;
-    my $random_tmp_dir = shift if defined(@_);
+    my $random_tmp_dir = shift;
     return $self->{'random_tmp_dir'} = $random_tmp_dir if defined($random_tmp_dir);
     return $self->{'random_tmp_dir'};
 }
@@ -2344,7 +2344,7 @@ new value of no_target_syn (to set)
 sub no_target_syn {
 
     my $self = shift;
-    my $no_target_syn = shift if defined(@_);
+    my $no_target_syn = shift;
     return $self->{'no_target_syn'} = $no_target_syn if defined($no_target_syn);
     return $self->{'no_target_syn'};
 }
@@ -2375,7 +2375,7 @@ new value of unique_target (to set)
 sub unique_target {
 
     my $self = shift;
-    my $unique_target = shift if defined(@_);
+    my $unique_target = shift;
     return $self->{'unique_target'} = $unique_target if defined($unique_target);
     return $self->{'unique_target'};
 }
@@ -2408,7 +2408,7 @@ new value of private_schema (to set)
 
 sub private_schema {
     my $self = shift;
-    my $private_schema = shift if defined(@_);
+    my $private_schema = shift;
     return $self->{'private_schema'} = $private_schema if defined($private_schema);
     return $self->{'private_schema'};
 }
@@ -2442,7 +2442,7 @@ new value of use_public_cv (to set)
 
 sub use_public_cv {
     my $self = shift;
-    my $use_public_cv = shift if defined(@_);
+    my $use_public_cv = shift;
     return $self->{'use_public_cv'} = $use_public_cv if defined($use_public_cv);
     return $self->{'use_public_cv'};
 }
@@ -2473,7 +2473,7 @@ new value of dbxref (to set)
 
 sub dbxref {
     my $self = shift;
-    my $dbxref = shift if defined(@_);
+    my $dbxref = shift;
     return $self->{'dbxref'} = $dbxref if defined($dbxref);
     return $self->{'dbxref'};
 }
@@ -2503,7 +2503,7 @@ new value of primary_dbxref (to set)
 
 sub primary_dbxref {
     my $self = shift;
-    my $primary_dbxref = shift if defined(@_);
+    my $primary_dbxref = shift;
     return $self->{'primary_dbxref'} = $primary_dbxref if defined($primary_dbxref);
     return $self->{'primary_dbxref'};
 }
@@ -4871,7 +4871,7 @@ new value of cds_db_exists (to set)
 
 sub cds_db_exists {
     my $self = shift;
-    my $cds_db_exists = shift if defined(@_);
+    my $cds_db_exists = shift;
     return $self->{'cds_db_exists'} = $cds_db_exists if defined($cds_db_exists);
     return $self->{'cds_db_exists'};
 }
